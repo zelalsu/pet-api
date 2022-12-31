@@ -54,7 +54,7 @@ namespace ApiPetshop.Controllers
                     da.Fill(table);
 
                 }
-                return "Added succesfully";
+                return "Başarıyla eklendi";
             }
             catch (Exception ex)
             {
