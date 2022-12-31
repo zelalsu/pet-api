@@ -20,6 +20,7 @@ namespace ApiPetshop.Controllers
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+
             //Create a List of Claims, Keep claims name short    
             var permClaims = new List<Claim>();
 

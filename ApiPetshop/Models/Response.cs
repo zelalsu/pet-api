@@ -11,3 +11,4 @@ namespace ApiPetshop.Models
         public string Message { get; set; }
     }
 }
+

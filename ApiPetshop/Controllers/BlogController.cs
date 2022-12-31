@@ -18,6 +18,7 @@ namespace ApiPetshop.Controllers
         public HttpResponseMessage Get()
         {
 
+
             DataTable table = new DataTable();
             string query = @"select BlogId,BlogName,BlogComment,BlogImage,BlogCommentTwo,BlogCommentThree,BlogCommentFour,BlogImageTwo,BlogImageThree from dbo.Blog";
             var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);

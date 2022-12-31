@@ -10,10 +10,15 @@ namespace ApiPetshop.Models
         public int BlogId { get; set; }
         public string BlogName {get; set;}
         public string BlogComment { get; set; }
-
         public string BlogCommentTwo { get; set; }
         public string BlogCommentThree{ get; set; }
         public string BlogCommentFour { get; set; }
+
+        public string BlogImage { get; set; }
+
+        public string BlogImageTwo { get; set; }
+        public string BlogImagethree { get; set; }
+
 
 
 

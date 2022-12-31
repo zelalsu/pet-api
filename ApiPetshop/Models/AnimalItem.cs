@@ -12,5 +12,6 @@ namespace ApiPetshop.Models
         public int AnimalId { get; set; }
         public string ItemName { get; set; }
 
+
     }
 }

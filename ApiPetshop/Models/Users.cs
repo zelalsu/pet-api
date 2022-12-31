@@ -15,6 +15,7 @@ namespace ApiPetshop.Models
 
         public string UserPassword { get; set; }
 
+
         public bool IsAdmin { get; set; }
     }
 }

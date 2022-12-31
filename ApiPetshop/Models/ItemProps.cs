@@ -14,6 +14,8 @@ namespace ApiPetshop.Models
         public string ProductProps { get; set; }
         public string Image { get; set; }
 
+
+
     }
 
 }

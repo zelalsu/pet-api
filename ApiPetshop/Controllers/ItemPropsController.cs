@@ -98,9 +98,8 @@ namespace ApiPetshop.Controllers
                 string query = @"UPDATE  dbo.ItemProps set 
                 ProductName= '" + item.ProductName + @"',
                 ProductBrand   = '" + item.ProductBrand + @"',
-                ProductProps='" + item.ProductProps + @"',
-  
-                where ID=" + item.ID + @"";
+                ProductProps='" + item.ProductProps + @"'
+                 where  ID ="  + item.ID + @"" ; 
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);
                 var command = new SqlCommand(query, con);
 
@@ -109,11 +108,11 @@ namespace ApiPetshop.Controllers
                     command.CommandType = CommandType.Text;
                     da.Fill(table);
                 }
-                return Request.CreateResponse("deneme güncellendi");
+                return Request.CreateResponse("Ürün Güncellendi");
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse("deneme" + ex.ToString());
+                return Request.CreateResponse("Ürün Güncellenemedi!" + ex.ToString());
             }
         }
 
