@@ -31,6 +31,7 @@ namespace ApiPetshop.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, table);
         }
 
+
         public HttpResponseMessage GetById(int id)
         {
             DataTable table = new DataTable();

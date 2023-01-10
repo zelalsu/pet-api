@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ApiPetshop.Models;
-using System.Web.Mvc;
 
 namespace ApiPetshop.Controllers
 {
@@ -48,8 +46,6 @@ namespace ApiPetshop.Controllers
             }
             return Request.CreateResponse(HttpStatusCode.OK, table);
         }
-
-
         public string Put( Blog item)
         {
             try
@@ -71,13 +67,43 @@ namespace ApiPetshop.Controllers
             {
                 return "Failed to add:"+ ex.ToString(); 
             }
-
-
-
-
-
-
            
         }
-}
+        public string Post(Blog item)
+        {
+            try
+            {
+                DataTable table = new DataTable();
+                string query = @"insert into dbo.Blog (BlogName,BlogComment,BlogCommentTwo,
+                BlogCommentThree,BlogCommentFour,BlogImage,BlogImageTwo,BlogImageThree) values(
+               
+             '" + item.BlogName + @"',
+             '" + item.BlogComment + @"',
+             '" + item.BlogCommentTwo + @"',
+             '" + item.BlogCommentThree + @"',
+             '" + item.BlogCommentFour + @"',
+             '" + item.BlogImage + @"',
+             '" + item.BlogImageTwo + @"',
+             '" + item.BlogImageThree + @"'   )";
+                var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);
+                var command = new SqlCommand(query, con);
+
+                using (var da = new SqlDataAdapter(command))
+                {
+                    command.CommandType = CommandType.Text;
+                    da.Fill(table);
+
+                }
+                return "Başarıyla eklendi";
+
+            }
+            catch (Exception ex)
+            {
+
+                return "Failed to successfully : " + ex.ToString();
+            }
+        }
     }
+
+  
+}

@@ -20,12 +20,7 @@ namespace ApiPetshop.Controllers
         public LoginResultDto POST(Users login)
         {
             string token;
-
-
-            JwtManager jwtManager = new JwtManager();
-
-           
-
+            JwtManager jwtManager = new JwtManager();           
             string query = "Select * from dbo.Users where UserName = '" + login.UserName + "' and UserPassword = '" + login.UserPassword + "' ";
             var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);
             con.Open();

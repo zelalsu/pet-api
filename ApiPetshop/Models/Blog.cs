@@ -17,7 +17,7 @@ namespace ApiPetshop.Models
         public string BlogImage { get; set; }
 
         public string BlogImageTwo { get; set; }
-        public string BlogImagethree { get; set; }
+        public string BlogImageThree { get; set; }
 
 
 

@@ -14,7 +14,6 @@ namespace ApiPetshop.Controllers
 {
     public class UserController : ApiController
     {
-        
         public HttpResponseMessage Get()
         {
             DataTable table = new DataTable();
@@ -26,14 +25,11 @@ namespace ApiPetshop.Controllers
             {
                 command.CommandType = CommandType.Text;
                 da.Fill(table);
-
             }
             return Request.CreateResponse(HttpStatusCode.OK, table);
         }
         public string Post( Users user)
         {
-            
-
             try
             {
                 DataTable table = new DataTable();
@@ -43,8 +39,6 @@ namespace ApiPetshop.Controllers
                     '" + user.UserMail + @"',
                     '" + user.UserPassword + @"',
                     '0'
-
-                  
                 )";
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);
                 var command = new SqlCommand(query, con);
@@ -63,9 +57,5 @@ namespace ApiPetshop.Controllers
                 return "Failed to successfully : " + ex.ToString();
             }
         }
-
-
-
-
     }
 }

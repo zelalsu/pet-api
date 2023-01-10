@@ -56,6 +56,8 @@ namespace ApiPetshop.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, table);
 
         }
+
+
         public string Post(ItemProps item)
         {
             try
@@ -66,7 +68,7 @@ namespace ApiPetshop.Controllers
             '" + item.ProductName + @"',
             '" + item.ProductBrand + @"',
             '" + item.ProductProps + @"',
-            '" + item.Image + @"',
+            '" + item.Image + @"'
             )";
                 var con = new SqlConnection(ConfigurationManager.ConnectionStrings["PetShopDb"].ConnectionString);
                 var command = new SqlCommand(query, con);
@@ -78,7 +80,6 @@ namespace ApiPetshop.Controllers
 
                 }
                 return "Başarıyla eklendi";
-
 
             }
             catch (Exception ex)
